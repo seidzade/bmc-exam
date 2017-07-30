@@ -1,6 +1,6 @@
 # bmc-exam , ubuntu 16.04
 
-On Ubuntu server, do following 4 steps :
+On Ubuntu server, do following 6 steps :
 
 1. Install VirtualBox (5.x):
 
@@ -40,3 +40,10 @@ On Ubuntu server, do following 4 steps :
 5. Clone git repository:
         
         git clone https://github.com/seidzade/bmc-exam.git
+     
+6. Deploy:
+        
+        cd bmc-exam
+        vagrant up
+
+After deployment , you should be able to access http server via http://172.28.128.6

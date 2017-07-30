@@ -1,0 +1,26 @@
+#playbook.yml
+---
+- hosts: all
+  sudo: yes
+  tasks:
+    - name: Add docker yum repository
+      yum_repository:
+        name: docker
+        description: docker repository
+        baseurl: https://yum.dockerproject.org/repo/main/centos/$releasever/
+        gpgcheck: yes
+        gpgkey: https://yum.dockerproject.org/gpg
+    - name: Install docker-engine
+      yum:
+        name: docker
+    - name: Configure Docker options
+      template:
+        src: 'etc/sysconfig/docker.j2'
+        dest: '/etc/sysconfig/docker'
+        owner: 'root'
+        group: 'root'
+        mode: '0644'  
+    - name: Start docker service
+      service:
+        name: docker
+        state: started

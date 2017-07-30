@@ -24,17 +24,17 @@
         name: docker
         state: started
 
-- hosts: group-consuls
+- hosts: cnss
   tasks:
     - name: Start consul container
       shell: docker -H :2375 run -d -p 8500:8500 --name=consul progrium/consul -server -bootstrap
 
-- hosts: group-managers
+- hosts: mgrs
   tasks:
     - name: Start swarm main container
       shell: docker -H :2375 run -d -p 4000:4000 swarm manage -H :4000 --replication --advertise {{ ansible_eth1.ipv4.address }}:4000 consul://{{ hostvars[groups['group-consuls'][0]].ansible_eth1.ipv4.address }}:8500
 
-- hosts: group-nodes
+- hosts: nodes
   tasks:
     - name: Start swarm 
       shell: docker -H :2375 run -d swarm join --advertise={{ ansible_eth1.ipv4.address }}:2375 consul://{{ hostvars['consul0'].ansible_eth1.ipv4.address }}:8500

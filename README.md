@@ -20,6 +20,8 @@ On Ubuntu server, do following 4 steps :
   
 4. install/start redis :
 
+        sudo pip install redis
+                
         cd ~; mkdir redis; cd redis
 
         wget http://download.redis.io/redis-stable.tar.gz

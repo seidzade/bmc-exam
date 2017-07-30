@@ -28,9 +28,4 @@ Vagrant.configure(2) do |config|
 		ansible.groups = groups
 		ansible.playbook = "provision.yml"
 	end
-        config.vm.provision "ansible" do |ansible|
-                ansible.verbose = "v"
-                ansible.groups = "managers"
-                ansible.playbook = "install_app.yml"
-        end
 end

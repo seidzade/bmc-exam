@@ -14,7 +14,7 @@ On Ubuntu server, do following 6 steps :
 
         sudo dpkg -i vagrant_1.8.5_x86_64.deb
 
-3. Install ansible:
+3. Install ansible (2.4.0):
   
         sudo pip install git+git://github.com/ansible/ansible.git@devel
   

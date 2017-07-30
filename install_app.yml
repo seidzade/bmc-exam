@@ -1,0 +1,5 @@
+---
+- hosts: managers[0]
+  tasks:
+    - name: Install http
+      shell: docker -H :4000 run -dit -p 80:80 --name apache-app -v "$PWD":/usr/local/apache2/htdocs/ httpd:2.4

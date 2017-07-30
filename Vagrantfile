@@ -1,4 +1,3 @@
-#Vagrantfile
 Vagrant.require_version ">=1.7.0"
 
 Vagrant.configure(2) do |config|
@@ -13,16 +12,16 @@ Vagrant.configure(2) do |config|
 	end
 
 	groups = {
-		"group-managers" => [
-			"manager0",
-			"manager1"
-		],
-		"group-consuls" => ["consul0"],
-		"group-nodes" => [
-			"node0",
-			"node1",
-		]
-	}
+			"group-managers" => [
+				"manager0",
+				"manager1"
+			],
+			"group-consuls" => ["consul0"],
+			"group-nodes" => [
+				"node0",
+				"node1",
+			]
+		}
 
 	config.vm.provision "ansible" do |ansible|
 		ansible.verbose = "v"

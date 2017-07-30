@@ -34,3 +34,7 @@ On Ubuntu server, do following 4 steps :
         sudo cp src/redis-cli /usr/local/bin/
 
         redis-server &
+        
+5. Clone git repository:
+        
+        git clone https://github.com/seidzade/bmc-exam.git

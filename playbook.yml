@@ -37,7 +37,7 @@
 - hosts: nodes
   tasks:
     - name: Start swarm node
-      shell: docker -H :2375 run -d swarm join --advertise={{ ansible_eth1.ipv4.address }}:2375 consul://{{ hostvars['consul0'].ansible_eth1.ipv4.address }}:8500
+      shell: docker -H :2375 run -d swarm join --advertise={{ ansible_eth1.ipv4.address }}:2375 consul://{{ hostvars['cns0'].ansible_eth1.ipv4.address }}:8500
       
 - hosts: managers[0]
   tasks:

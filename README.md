@@ -10,7 +10,9 @@ On Ubuntu server, do following 4 steps :
   
   cd ~
   mkdir vagrant; cd vagrant
+  
   wget https://releases.hashicorp.com/vagrant/1.8.5/vagrant_1.8.5_x86_64.deb
+  
   sudo dpkg -i vagrant_1.8.5_x86_64.deb
 
 3. Install ansible:

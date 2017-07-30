@@ -21,7 +21,7 @@ On Ubuntu server, do following 6 steps :
 4. install/start redis :
 
         sudo pip install redis
-                
+
         cd ~; mkdir redis; cd redis
 
         wget http://download.redis.io/redis-stable.tar.gz
@@ -44,6 +44,8 @@ On Ubuntu server, do following 6 steps :
 6. Deploy:
         
         cd bmc-exam
-        vagrant up
+        vagrant up --no-provision
+        vagrant provision --provision-with main
+        vagrant provision --provision-with app
 
-After deployment , you should be able to access http server via http://172.28.128.6
+After deployment , you should be able to access http, from your Ubuntu server,  via http://172.28.128.6

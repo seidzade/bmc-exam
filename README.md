@@ -18,7 +18,8 @@ On Ubuntu server, do following 6 steps :
   
         sudo pip install git+git://github.com/ansible/ansible.git@devel
   
-4. install/start redis :
+4. We need allow ansible to cache facts from nodes in order to avoid extra ssh settings for each node.
+   Install/start redis :
 
         sudo pip install redis
 
